@@ -1,0 +1,27 @@
+<body>
+    <h1>This is my first WebGL project.</h1>
+    <p>My name is Singhtaravirak Chea.</p>
+
+    <canvas id="my_canvas" width="640" height="480"></canvas>
+</body>
+
+<script>
+    main();
+
+    function main() {
+        var canvas = document.getElementById('my_canvas');
+        //Initialize the GL Context 
+        var gl = canvas.getContext("webgl");
+
+        //Only continue if WebGL is available and working 
+        if (!gl) {
+            alert("Unable to initialize WebGL. Your browser or machine may not support it.");
+            return;
+        }
+        //Set clear color to red, fully opaque 
+        gl.clearColor(1.0, 0.0, 0.0, 1.0);
+        //Clear the color buffer with specified clear color
+        gl.clear(gl.COLOR_BUFFER_BIT)
+    }
+
+</script>
